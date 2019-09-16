@@ -15,13 +15,23 @@
         <h1>TO DO</h1>
     </header>
 
-    <form id="fields">
+    <section>
         <div id="add-todo">
             <i class="fas fa-arrow-down"></i>
-            <input type="text" placeholder="Adicione um TODO">
+            <input type="text" placeholder="Adicione um TODO" required>
             <i class="fas fa-greater-than"></i>
         </div>
-    </form>
+
+        <div id="filter-itens">
+            <p>Itens Left</p>
+            <a href="#">All</a>
+            <a href="#">Active</a>
+            <a href="#">Completed</a>
+            <a href="#">Clear</a>
+        </div>
+    </section>  
+
+    <section id="fields"></section>
 
 
     <script src="app.js"></script>

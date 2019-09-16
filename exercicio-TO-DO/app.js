@@ -1,10 +1,19 @@
 const input = document.querySelector('input');
-console.log(input.value);
+console.log(input);
 
 var enter = document.querySelector('.fa-greater-than');
 console.log(enter);
 
+const filter = document.querySelector('.filter-itens');
 var totItem = 0;
+//Objetos principais para trabalharmos - campo input, botao de entrada, acumuladores...
+
+input.addEventListener('keyup', function(event){   
+    if (event.keyCode === 13 || event.which === 13){  
+        event.preventDefault();
+        document.querySelector('.fa-greater-than').click();
+    }
+}); //Quando clicar em ENTER, chamar o evento para criar os itens
 
 enter.addEventListener('click', function(){
     criarItem( input.value, totItem );
@@ -16,6 +25,7 @@ function criarItem(value, num){
         newAttributes(num);
         newEvents(num);
         this.totItem++
+        filterItens();
     }else{
         erro();
     }
@@ -31,7 +41,7 @@ function newDiv(value){
     newPara.appendChild(newText);
     newDiv.appendChild(newPara);
     newDiv.appendChild(newIconePos);
-    document.querySelector('form').appendChild(newDiv);
+    document.querySelector('#fields').appendChild(newDiv);
 }
 
 function newAttributes(num){
@@ -59,8 +69,10 @@ function newEvents(){
     parent.children[2].addEventListener('click', function(){ deleteItem(parent) }); //adiciona evento ao segundo icone
 }
 
-function deleteItem(elementoPai){//Exclui o item 
+function deleteItem(elementoPai){  //Exclui o item 
     elementoPai.remove();
+    filterItens();
+    this.totItem--;
 }
 
 function strikeItem(elementoPai){ //Troca a cor do item 
@@ -70,6 +82,32 @@ function strikeItem(elementoPai){ //Troca a cor do item
         elementoPai.children[1].style.backgroundColor = 'transparent';
     }
 }
+
+function filterItens(){
+    let parent = document.querySelector("#fields");
+    if (parent.childNodes.length > 0){
+        document.querySelector('#filter-itens').style.display = 'flex';
+    }else{
+        document.querySelector('#filter-itens').style.display = 'none';
+    }
+}
+
+function itensLeft(filter){
+    filter.children[0].
+    var parent = document.querySelector("#fields");
+    if (parent.childNodes.backgroundColor = 'red'){
+
+    }
+
+}
+
+
+
+
+
+
+
+
 
 
 function erro(){

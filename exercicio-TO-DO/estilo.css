@@ -22,7 +22,7 @@ input{
     border: none;
     outline: none;
 }
-form{
+section{
     border: 1px solid red;
     width: 40%;
     margin: 0 auto;
@@ -40,4 +40,9 @@ form{
 .item.active,
 .interactions.active{
     display: block;
+}
+
+#filter-itens{
+    display: none;
+    
 }
