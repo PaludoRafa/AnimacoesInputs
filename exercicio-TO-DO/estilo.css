@@ -1,0 +1,43 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 16px;;
+    /* border: 1px solid black; */
+}
+
+header{
+    text-align: center;
+    margin: 40px;
+}
+
+div{
+    display: flex;
+    justify-content: space-between;
+    padding: 12px;
+}
+
+input{
+    background: none;
+    border: none;
+    outline: none;
+}
+form{
+    border: 1px solid red;
+    width: 40%;
+    margin: 0 auto;
+}
+
+.fa-greater-than{
+    cursor: pointer;
+}
+
+.item.innactive,
+.interactions.innactive{
+    display: none;
+}
+
+.item.active,
+.interactions.active{
+    display: block;
+}
